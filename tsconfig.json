@@ -4,6 +4,7 @@
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
+      
     "skipLibCheck": true,
     
     "baseUrl": ".",
@@ -27,6 +28,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/components", "src/custom.d.ts" ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

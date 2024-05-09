@@ -1,6 +1,8 @@
-export const Bg = ( className:any ) => {
+export const Bg = (  ) => {
     return (
-<svg  className={className} id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1041.55 1042.06">
+      <div className="bg">
+<svg   id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1041.55 1042.06" width="400"
+        height="400">
   <defs>
   <style>
   {`
@@ -90,5 +92,6 @@ export const Bg = ( className:any ) => {
     </g>
   </g>
 </svg>
+</div>      
     );
 }
