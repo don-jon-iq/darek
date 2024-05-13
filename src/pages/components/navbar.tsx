@@ -2,15 +2,20 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '@/assets/SVG/logo_1.svg'
 import { Turn as Hamburger } from 'hamburger-react';
+import gsap from 'gsap';
 
 
 const Navbar: React.FC = () => {
     const [isOpen, setOpen] = useState(false);
+    const menuopen = gsap.timeline();
+
     const handleNavbarCollapse = () => {
         if (window.innerWidth < 650){
         setOpen();
       // close a menu
-      
+      menuopen.fromTo('.navbar-list', {opacity: 1, y:0,ease: "sine.out" },{opacity: 0,y:-100,ease: "sine.out"},'-=.5')
+      .to('.navbar-nav', {x:-1000,ease: "sine.out",delay:.2})
+
     
         }   
     };
@@ -28,7 +33,8 @@ const Navbar: React.FC = () => {
             <Hamburger  duration={.5} color="#2e5894"  toggled={isOpen} toggle={setOpen}  onToggle={toggled => {
                           if (toggled) {
                              // open a menu
-                             
+                             menuopen.to('.navbar-nav', {x:0,ease: "sine.out",delay:.2})
+                             .fromTo('.navbar-list', {opacity: 0, y:-100,ease: "sine.out" },{opacity: 1,y:0,ease: "sine.out"})
                           } else {
                              
                                 handleNavbarCollapse();

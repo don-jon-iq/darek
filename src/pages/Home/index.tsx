@@ -9,6 +9,7 @@ import './style.css'
 import { Link } from 'react-router-dom';
 import logo from '@/assets/SVG/logo_1.svg'
 import Navbar from '../components/navbar';
+import  Menu  from './menu';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 function Home() {
@@ -51,8 +52,7 @@ function Home() {
       <div className="container" ref={container}>
             <div className='contant'>
                 <Bg />
-
-
+                <Menu />
             </div>
             <Navbar/>
         </div >
