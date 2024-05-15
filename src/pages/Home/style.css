@@ -148,13 +148,50 @@
 
    
   }
-
+  .menu-item {
+    position: relative;
+  }
   .menu-top {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 75px;
+    height: 40px;
     background-color: #2e5894;
     border-radius: 0 0 100% 100% ;
+  }
+
+  .menu-top h1 {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .menu-item-title {
+    height:20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .menu-item-title h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #af3e3e;
+  }
+  .menu-center-price {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .menu-center-price h2 {
+        font-size: 30px;
+        font-weight: bold;
+        color: #ffc280;
+    }
+  .menu-center-des {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

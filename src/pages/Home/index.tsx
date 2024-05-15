@@ -38,6 +38,13 @@ function Home() {
            .fromTo('.hum-menu', {opacity:0, x:-150,ease: "sine.out" },{opacity:1,ease: "sine.out"},'-=.5')
            .to('.hum-menu', { x:0,ease: "sine.out" },'-=.5')
 
+
+           .from('.menu-top', { height:0,ease: "power2.in" },'-=2.5')
+           .from('.menu-item-img', { scale: 0.1,rotate: 160, opacity:0,ease: "power2.in" },'-=.5')
+           .from('.menu-item-title', { x:1000,ease: "power2.in" },'-=.5')
+           .from('.menu-center-des', { x:1000,ease: "power2.in" },'-=.5')
+           .from('.menu-center-price', { x:1000,ease: "power2.in" },'-=.5')
+          
         }
     );
 
@@ -53,6 +60,8 @@ function Home() {
             <div className='contant'>
                 <Bg />
                 <Menu />
+                <Menu />
+
             </div>
             <Navbar/>
         </div >
