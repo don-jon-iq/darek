@@ -28,7 +28,7 @@ function Menu(props: { pMenu: string , itemtitle:string,itemname:string,itempric
 
             gsap.set(outerWrappers, { xPercent: 100 });
             gsap.set(innerWrappers, { xPercent: -100 });
-            gsap.set(".m:nth-of-type(1) .slide__outer", { xPercent: 0 });
+            gsap.set(".m:nth-of-type(1) .slide__outer", {xPercent:0});
             gsap.set(".m:nth-of-type(1) .slide__inner", { xPercent: 0 });
 
             function gotoSection(index, direction) {

@@ -11,7 +11,6 @@ const Navbar: React.FC = () => {
     const menuopen = gsap.timeline();
 
     const handleNavbarCollapse = () => {
-        if (window.innerWidth < 650){
         setOpen();
       // close a menu
       menuopen
@@ -27,7 +26,7 @@ const Navbar: React.FC = () => {
       .to('.menu-center-price', { x: 0, ease: "power2.in" },"ham-close")
 
       
-        }   
+        
     };
 
     return (
@@ -53,8 +52,8 @@ const Navbar: React.FC = () => {
                              
                              .to('#Layer_2', { opacity: 0, transformOrigin: 'center', scale: .2, rotate: 160, ease: "sine.out", duration: 0.8 },"ham-open")
                              .to('.navbar-nav', {y:0,ease: "sine.out",delay:.1},"ham-open")
-                             .fromTo('.navbar-list li', {opacity: 0, x:-100,ease: "sine.out" },{opacity: 1,x:0,stagger:.1,ease: "sine.out"},"ham-open")
-                             .to('.linklogo', {  y: -120, x:160,scale:1.1, ease: "sine.out" },"ham-open")
+                             .fromTo('.navbar-list li', {opacity: 0, x:-100,ease: "sine.out" },{opacity: 1,x:0,stagger:.2,ease: "sine.out"},"ham-open")
+                             .to('.linklogo', {  x:180,scale:1.1, ease: "sine.out" },"ham-open")
                           } else {
                              
                                 handleNavbarCollapse();
