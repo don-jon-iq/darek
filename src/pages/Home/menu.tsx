@@ -8,7 +8,7 @@ import Observer from 'gsap/Observer';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, Observer);
 
-function Menu(props: { pMenu: string }) {
+function Menu(props: { pMenu: string , itemtitle:string,itemname:string,itemprice:string,itemdes:string,itemimg:string }) {
     useGSAP(
         () => {
 
@@ -189,7 +189,7 @@ function Menu(props: { pMenu: string }) {
                     if (animating) return;
                     gotoSection(currentIndex - 1, -1);
                 },
-                tolerance: 10
+                tolerance: 1
             });
 
 
@@ -198,31 +198,31 @@ function Menu(props: { pMenu: string }) {
         }
     );
     return (
-        <section className="m">
+        <section className={"m "+props.pMenu}>
             <div className="slide__outer">
                 <div className="slide__inner">
                     <div className="slide__content">
                         <div className="slide__container">
-                            <div className={props.pMenu} >
+                            <div className={props.pMenu}>
                                 <div className='menu-top'>
-                                    <h1>السلطات</h1>
+                                    <h1>{props.itemtitle}</h1>
                                 </div>
 
                                 <div className='menu-center'>
                                     <div className='menu-item'>
 
                                         <div className='menu-item-title'>
-                                            <h2>بيتزا</h2>
+                                            <h2>{props.itemname}</h2>
                                         </div>
                                         <div className='menu-item-img'>
                                             <img src={imgitem} />
                                         </div>
 
                                         <div className='menu-center-des'>
-                                            <p>asfaddasd</p>
+                                            <p>{props.itemdes}</p>
                                         </div>
                                         <div className='menu-center-price'>
-                                            <h2>15,000</h2>
+                                            <h2>{props.itemprice}</h2>
                                         </div>
                                     </div>
                                 </div>

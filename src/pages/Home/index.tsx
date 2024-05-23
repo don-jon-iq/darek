@@ -37,8 +37,6 @@ function Home() {
                 .to('.linklogo', { x: 0, ease: "sine.out" }, '=.1')
                 .fromTo('.hum-menu', { opacity: 0, x: -150, ease: "sine.out" }, { opacity: 1, ease: "sine.out" }, '-=.5')
                 .to('.hum-menu', { x: 0, ease: "sine.out" }, '-=.5')
-                .to('.m1 .slide__outer', { xPercent: 0, ease: "power2.in" }, '-=.1')
-                .to('.m1 .slide__inner', { xPercent: 0, ease: "power2.in" }, '-=.1')
 
                 .from('.menu-top', { height: 0, ease: "power2.in" }, '-=2.5')
                 .from('.menu-item-img', { scale: 0.1, rotate: 160, opacity: 0, ease: "power2.in" }, '-=.5')
@@ -62,9 +60,12 @@ function Home() {
                     <Bg />
                     <div className="menu-container">
 
-                        <Menu pMenu={'m1'} />
-                        <Menu pMenu={'m2'} />
-                        <Menu pMenu={'m3'} />
+                        <Menu pMenu={'m1'} itemdes='التفاصيل' itemname='بيتزا بــبــرونــي ' itemprice='14000'  itemtitle='بيتزا' />
+                        <Menu pMenu={'m2'} itemdes='التفاصيل;التفاصيل;التفاصيل' itemname='حـســاء الـدجاج' itemprice='13000'  itemtitle='بيتزا'  />
+                        <Menu pMenu={'m3'} itemdes='التفاصيل;التفاصيل;التفاصيل' itemname='بـيــتــزا خــضــار' itemprice='11000'  itemtitle='بيتزا' />
+                        <Menu pMenu={'m4'} itemdes='التفاصيل;التفاصيل;التفاصيل' itemname='بيتزا فصول دارك' itemprice='13000'  itemtitle='بيتزا' />
+                        <Menu pMenu={'m5'} itemdes='التفاصيل;التفاصيل;التفاصيل' itemname='بيتزا حبش وفيتا' itemprice='14000'  itemtitle='بيتزا' />
+                      
 
                     </div>
                 </div>
