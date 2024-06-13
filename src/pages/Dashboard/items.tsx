@@ -40,16 +40,17 @@ const profileFormSchema = z.object({
    ,
   desc: z.string().max(160).min(4),
   image: 
-      z.string().url({ message: "Please enter a valid URL." })
-      .optional(),
+     z.string()//.url({ message: "Please enter a valid URL." })
+   .optional(),
 })
 
 type ProfileFormValues = z.infer<typeof profileFormSchema>
 
 // This can come from your database or API.
 const defaultValues: Partial<ProfileFormValues> = {
+  itemname: "John Doe",
   desc: "I own a computer.",
-  price:1000 ,
+  price:1000,
 }
 
 export function Items() {
@@ -62,14 +63,25 @@ export function Items() {
 
 
   function onSubmit(data: ProfileFormValues) {
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
+    fetch("http://127.0.0.1:8000/api/categories", {
+      method: "POST",
+      body: JSON.stringify({ 
+        name: data.itemname,
+        price: data.price,
+        description: data.desc,
+        category_id: 1,
+       }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response data
+      })
+      .catch((error) => {
+        // Handle the error
+      })
   }
 
   return (
@@ -77,9 +89,9 @@ export function Items() {
     <div className="space-y-6">
               
       <div>
-        <h3 className="text-lg font-medium">Profile</h3>
+        <h3 className="text-lg font-medium">اضافة طبق جديد</h3>
         <p className="text-sm text-muted-foreground">
-          This is how others will see you on the site.
+          يمكنك اضافة الاطباق الجديدة هنا
         </p>
       </div>
       <Separator />
@@ -109,7 +121,6 @@ export function Items() {
                 <FormControl>
                   <Input
                     {...field}
-                    value={0}
                   />
                 </FormControl>
                 <FormMessage />

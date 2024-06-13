@@ -1,0 +1,1 @@
+[19-Apr-2024 00:20:47 America/Boise] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.0.30. in /home4/eccconsc/public_html/website_e06e20c9/lara/vendor/composer/platform_check.php on line 24
